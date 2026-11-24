@@ -17,8 +17,10 @@ Simple PCB V1 (90 x 70 mm, all through-hole): fix the open items below, then ord
   MT3608 30.48 x 7.62 mm, SX1308 17.78 x 10.16 mm. Station "1" renamed "MT3608". DRC 0 after pour rebuild (2026-11-23).
 - Silkscreen: RED / BLACK (back) and + / - (top) at the battery connector CN2.
 
-## Open items
-1. Silkscreen: give U2 a name (e.g. SX1308); optional +/- marks at the pogo pads.
-2. Check the HT7833 pin order (footprint: 1 GND, 2 VIN, 3 VOUT) against the part you have.
-3. Then order. Firmware: BUZZER = GPIO3, BTN_DOWN = GPIO4, BTN_UP = GPIO7, BTN_OK = GPIO10,
-   VOUT_SENSE = GPIO0 (x11), VBAT_SENSE = GPIO1 (x2).
+- HT7833 pin order (1 GND, 2 VIN, 3 VOUT) checked against the real part by the user. U2 name left as is (user's call).
+- Final DRC before ordering (2026-11-23): pours rebuilt, 0 errors. Design is ready to order.
+
+## Next step
+1. Order 5 boards (2 layers, 1.6 mm, HASL). Firmware pins: BUZZER = GPIO3, BTN_DOWN = GPIO4, BTN_UP = GPIO7,
+   BTN_OK = GPIO10, VOUT_SENSE = GPIO0 (x11), VBAT_SENSE = GPIO1 (x2).
+2. While boards ship: write the firmware.
