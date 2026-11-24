@@ -1,0 +1,42 @@
+# BoosterTestJig V1 (simple) netlist: designator.pin NET. Source of truth for the schematic script.
+# ESP32-C3 OLED board: J1 = 5V column (pin1 5V at USB end), J2 = GPIO10 column (pin1 GPIO10 at USB end).
+J1.2 GND
+J1.3 +3V3
+J1.7 VBAT_SENSE
+J1.8 VOUT_SENSE
+J2.1 BTN_UP
+J2.4 BUZZER
+J2.7 BTN_DOWN
+J2.8 BTN_OK
+# TP4056 module pads: J3 OUT+, J4 B+, J5 B-, J6 OUT-
+J3.1 VBAT_RAW
+J4.1 BAT+
+J5.1 BAT-
+J6.1 GND
+J7.1 BAT+
+J7.2 BAT-
+SW1.2 VBAT_RAW
+SW1.1 VBAT_SW
+U2.2 VBAT_SW
+U2.1 GND
+U2.3 +3V3
+R1.1 DUT_VOUT
+R1.2 VOUT_SENSE
+R2.1 VOUT_SENSE
+R2.2 GND
+R3.1 VBAT_SW
+R3.2 VBAT_SENSE
+R4.1 VBAT_SENSE
+R4.2 GND
+SW2.1 BTN_UP
+SW2.4 GND
+SW3.1 BTN_DOWN
+SW3.4 GND
+SW4.1 BTN_OK
+SW4.4 GND
+# Buzzer (same circuit as the ESP NOW Controller): GPIO7 -> 2N7000 gate, buzzer between VBAT_SW and drain
+Q1.1 GND
+Q1.2 BUZZER
+Q1.3 BUZ_N
+SG1.1 VBAT_SW
+SG1.2 BUZ_N

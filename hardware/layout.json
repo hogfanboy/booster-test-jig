@@ -1,0 +1,348 @@
+{
+ "_note": "Board mm, origin bottom-left, y up, rotation deg. User sits at the bottom edge (y=0). Pogo positions are ESTIMATES: measure your modules before ordering.",
+ "_layout": "Front: two pogo stations, both input on the left (hands). Back/top edge: ESP32 + OLED (eyes, never under a hand). Right edge: UP/OK/DOWN column. Left edge: power switch, battery, TP4056 USB-C.",
+ "board": [
+  90,
+  70
+ ],
+ "parts": {
+  "J1": [
+   36.11,
+   57.61,
+   270
+  ],
+  "J2": [
+   53.89,
+   57.61,
+   270
+  ],
+  "J3": [
+   25.34,
+   59.0,
+   0
+  ],
+  "J4": [
+   25.34,
+   56.46,
+   0
+  ],
+  "J5": [
+   25.34,
+   47.54,
+   0
+  ],
+  "J6": [
+   25.34,
+   45.0,
+   0
+  ],
+  "J7": [
+   12,
+   36,
+   0
+  ],
+  "SW1": [
+   4.5,
+   37,
+   90
+  ],
+  "U2": [
+   30,
+   38,
+   0
+  ],
+  "R1": [
+   40.7,
+   20,
+   90
+  ],
+  "R2": [
+   43.7,
+   20,
+   90
+  ],
+  "R3": [
+   37,
+   37,
+   90
+  ],
+  "R4": [
+   40.5,
+   37,
+   90
+  ],
+  "SW2": [
+   82,
+   44,
+   0
+  ],
+  "SW4": [
+   82,
+   30,
+   0
+  ],
+  "SW3": [
+   82,
+   16,
+   0
+  ],
+  "Q1": [
+   70,
+   60,
+   0
+  ],
+  "SG1": [
+   80,
+   57.5,
+   0
+  ]
+ },
+ "pogo": {
+  "hole_mm": 2.4,
+  "pad_mm": 3.8,
+  "_part": "R125-4S receptacle (2.36 mm OD, 2.4 mm mounting hole) + P125-E2 probe",
+  "_note": "Two separate stations, both modules input-left / output-right, + on the far side. Output divider R1/R2 sits in the gap between them.",
+  "pads": [
+   [
+    "MT_IN+",
+    4.5,
+    26.6,
+    "VBAT_SW"
+   ],
+   [
+    "MT_IN-",
+    4.5,
+    13.4,
+    "GND"
+   ],
+   [
+    "MT_OUT+",
+    36.5,
+    26.6,
+    "DUT_VOUT"
+   ],
+   [
+    "MT_OUT-",
+    36.5,
+    13.4,
+    "GND"
+   ],
+   [
+    "SX_IN+",
+    47.75,
+    26.25,
+    "VBAT_SW"
+   ],
+   [
+    "SX_IN-",
+    47.75,
+    13.75,
+    "GND"
+   ],
+   [
+    "SX_OUT+",
+    68.25,
+    26.25,
+    "DUT_VOUT"
+   ],
+   [
+    "SX_OUT-",
+    68.25,
+    13.75,
+    "GND"
+   ]
+  ]
+ },
+ "stations": {
+  "MT3608": {
+   "center": [
+    20.5,
+    20
+   ],
+   "size": [
+    36,
+    17
+   ]
+  },
+  "SX1308": {
+   "center": [
+    58,
+    20
+   ],
+   "size": [
+    24,
+    16
+   ]
+  }
+ },
+ "tp4056": {
+  "_note": "Copied from the ESP NOW Controller footprint: module plugs in from the back, USB-C at the left edge. J3-J6 = OUT+, B+, B-, OUT-; IN1/IN2 = unconnected support pads.",
+  "center": [
+   13.84,
+   52
+  ],
+  "free_pads": [
+   [
+    "TP_IN1",
+    2.34,
+    59.0
+   ],
+   [
+    "TP_IN2",
+    2.34,
+    45.0
+   ]
+  ],
+  "pad_mm": 2.0,
+  "hole_mm": 1.0,
+  "outline_bottom_silk": [
+   0.3,
+   43.25,
+   28.3,
+   60.75
+  ]
+ },
+ "mount_holes": {
+  "_note": "Like the controller: 3.2 mm plated hole, 6 mm GND pad, 6 stitching vias (1.0/0.8 mm), moved out to 2.5 mm radius so DRC hole-to-hole passes (controller has 2.29).",
+  "hole_mm": 3.2,
+  "pad_mm": 6.0,
+  "via": [
+   1.0,
+   0.8
+  ],
+  "via_offsets": [
+   [
+    0,
+    2.5
+   ],
+   [
+    0,
+    -2.5
+   ],
+   [
+    2.165,
+    1.25
+   ],
+   [
+    2.165,
+    -1.25
+   ],
+   [
+    -2.165,
+    1.25
+   ],
+   [
+    -2.165,
+    -1.25
+   ]
+  ],
+  "at": [
+   [
+    3.5,
+    3.5
+   ],
+   [
+    86.5,
+    3.5
+   ],
+   [
+    3.5,
+    66.5
+   ],
+   [
+    86.5,
+    66.5
+   ]
+  ]
+ },
+ "outlines": {
+  "ESP32C3": [
+   34.75,
+   44.7,
+   55.25,
+   69.7
+  ]
+ },
+ "labels": [
+  [
+   "MT3608",
+   20.5,
+   20
+  ],
+  [
+   "SX1308",
+   58,
+   20
+  ],
+  [
+   "IN+",
+   8.5,
+   23
+  ],
+  [
+   "IN-",
+   8.5,
+   17
+  ],
+  [
+   "OUT+",
+   32,
+   23
+  ],
+  [
+   "OUT-",
+   32,
+   17
+  ],
+  [
+   "IN+",
+   51.5,
+   23
+  ],
+  [
+   "IN-",
+   51.5,
+   17
+  ],
+  [
+   "OUT+",
+   64,
+   23
+  ],
+  [
+   "OUT-",
+   64,
+   17
+  ],
+  [
+   "UP",
+   73,
+   44
+  ],
+  [
+   "OK",
+   73,
+   30
+  ],
+  [
+   "DOWN",
+   82,
+   8.2
+  ],
+  [
+   "PWR",
+   9.5,
+   31
+  ],
+  [
+   "BAT",
+   12,
+   40.5
+  ],
+  [
+   "USB-C",
+   4,
+   62
+  ]
+ ]
+}
