@@ -39,18 +39,19 @@ pin order against its datasheet or your controller board before soldering; turn 
 ## 4. Pins (ESP32-C3)
 | GPIO | Net | Use |
 |---|---|---|
-| 0 | VOUT_SENSE | Module output, 100k / 10k divider (x11) |
-| 1 | VBAT_SENSE | Battery, 100k / 100k divider (x2) |
-| 10 | BTN_UP | Button to GND, internal pull-up |
+| 0 | VOUT_SENSE | Module output, 100k / 10k divider (x11, reads up to about 27 V) |
+| 1 | VBAT_SENSE | Battery, 10k / 10k divider (x2) |
+| 7 | BTN_UP | Button to GND, internal pull-up |
 | 4 | BTN_DOWN | Button to GND, internal pull-up |
-| 3 | BTN_OK | Button to GND, internal pull-up |
-| 7 | BUZZER | 2N7000 gate (J2 pin 4: check against the board printing) |
+| 10 | BTN_OK | Button to GND, internal pull-up |
+| 3 | BUZZER | 2N7000 gate |
 | 5 / 6 | SDA / SCL | On-board 0.42" OLED |
 
 ## 5. Pogo stations (pad positions are ESTIMATES until measured)
 Module sits pot-side up on the probes. Exact positions: `hardware/layout.json` (`stations`).
 
-## 6. Firmware requirements (not written)
-- Big live VOUT on the OLED; battery voltage in a corner.
-- UP/DOWN set a target voltage, OK saves it; screen shows how far off you are (and an arrow: turn up/down).
-- Calibrate the divider once against a multimeter and store the factor.
+## 6. Firmware (`firmware/BoosterTestJig`, written, not yet tested on hardware) [unverified]
+- Big live VOUT on the OLED (U8g2, SSD1306 72x40); battery voltage top right, blinks LOW under 3.4 V.
+- UP/DOWN set the target (0.1 V steps, 1-27 V), short OK saves it to flash; bottom line shows the error and an up/down arrow.
+- Beep when within 0.05 V of the target. "NO MODULE" under 0.5 V.
+- Hold OK 2 s: calibrate VOUT against a multimeter, factor stored in flash. Usage: `firmware/README.md`.

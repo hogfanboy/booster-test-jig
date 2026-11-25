@@ -1,7 +1,7 @@
 # PROGRESS
 
 ## Current target
-Simple PCB V1 (90 x 70 mm, all through-hole): fix the open items below, then order 5 boards.
+Simple PCB V1 (90 x 70 mm, all through-hole): order 5 boards, then bring up the firmware on a real board.
 
 ## Working state (2026-11-23, after the designer's manual rework)
 - Rebuilt in EasyEDA with controller library parts: U3 ESP32-C3 board, U4 TP4056 module (USB-C at the top edge),
@@ -20,7 +20,10 @@ Simple PCB V1 (90 x 70 mm, all through-hole): fix the open items below, then ord
 - HT7833 pin order (1 GND, 2 VIN, 3 VOUT) checked against the real part by the user. U2 name left as is (user's call).
 - Final DRC before ordering (2026-11-23): pours rebuilt, 0 errors. Design is ready to order.
 
+- Firmware written (2026-11-25): `firmware/BoosterTestJig/BoosterTestJig.ino`, how-to in `firmware/README.md`.
+  Pins: BUZZER GPIO3, BTN_DOWN GPIO4, BTN_UP GPIO7, BTN_OK GPIO10, VOUT_SENSE GPIO0 (x11), VBAT_SENSE GPIO1 (x2),
+  OLED SDA 5 / SCL 6. GitHub Action compiles it on every push. Not yet run on hardware.
+
 ## Next step
-1. Order 5 boards (2 layers, 1.6 mm, HASL). Firmware pins: BUZZER = GPIO3, BTN_DOWN = GPIO4, BTN_UP = GPIO7,
-   BTN_OK = GPIO10, VOUT_SENSE = GPIO0 (x11), VBAT_SENSE = GPIO1 (x2).
-2. While boards ship: write the firmware.
+1. Order 5 boards (2 layers, 1.6 mm, HASL). Check the R125 sleeves fit the 2.4 mm holes.
+2. When boards arrive: upload the firmware, check the OLED, buttons, buzzer, then calibrate against a multimeter.
